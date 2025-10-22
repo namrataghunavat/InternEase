@@ -1,0 +1,30 @@
+{
+    "name": "ApplyShalla",
+    "description": "Scrapes the internshala website using puppeteer and automatic filling internships",
+    "version": "1.0",
+    "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+    
+  },
+  "icons":{
+
+    "128":"icon.png"
+
+
+  },
+  "permissions": [
+    "activeTab",
+    "http://localhost/*"
+  ],
+      "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' http://localhost:3000 https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;"
+    },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "externally_connectable": {
+    "matches": ["http://localhost/*"]
+  }
+}
